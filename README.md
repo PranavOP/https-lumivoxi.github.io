@@ -1,1 +1,0 @@
-# Day2\nAdded starfield, cursor glow, featured game cards, smooth scrolling.
