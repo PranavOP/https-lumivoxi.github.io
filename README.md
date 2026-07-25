@@ -1,2 +1,1 @@
-# Lumivoxi Day 1
-Open index.html or upload to GitHub Pages.
+# Day2\nAdded starfield, cursor glow, featured game cards, smooth scrolling.
