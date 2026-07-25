@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEXUS GAMES — Play in the Future</title>
+  <meta name="description" content="A futuristic collection of mini-games. Pick a game. Enter the grid." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Space+Grotesk:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ░░ BACKGROUND LAYERS ░░ -->
+  <canvas id="starfield"></canvas>
+  <div class="scanlines"></div>
+  <div class="hud-grid"></div>
+  <div class="vignette"></div>
+
+  <!-- ░░ CURSOR TRAIL (desktop) ░░ -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- ═══════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════ -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="logo-bracket">[</span>
+        <span class="logo-text">NEXUS</span>
+        <span class="logo-accent">GAMES</span>
+        <span class="logo-bracket">]</span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#games">GAMES</a>
+        <a href="#about">ABOUT</a>
+        <a href="#leaderboard">SCORES</a>
+      </nav>
+      <div class="nav-status">
+        <span class="status-dot"></span>
+        <span class="status-text">ONLINE</span>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════
+       HERO
+  ═══════════════════════════════════ -->
+  <section class="hero" id="top">
+    <div class="hero-inner">
+
+      <!-- HUD corner brackets -->
+      <div class="corner tl"></div>
+      <div class="corner tr"></div>
+      <div class="corner bl"></div>
+      <div class="corner br"></div>
+
+      <div class="hero-tag">// SYSTEM ONLINE · BUILD v1.0.0</div>
+
+      <h1 class="hero-title">
+        <span class="glitch" data-text="ENTER THE">ENTER THE</span>
+        <span class="glitch hero-accent" data-text="NEXUS">NEXUS</span>
+      </h1>
+
+      <p class="hero-sub">
+        A collection of mini-games built for the browser.<br/>
+        Pick a game. Beat the score. Become the legend.
+      </p>
+
+      <div class="hero-cta">
+        <a href="#games" class="btn btn-primary">
+          <span class="btn-glow"></span>
+          ▶ PLAY NOW
+        </a>
+        <a href="#about" class="btn btn-ghost">LEARN MORE</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hstat"><span class="hstat-num" data-count="6">0</span><span class="hstat-lbl">GAMES</span></div>
+        <div class="hstat-divider"></div>
+        <div class="hstat"><span class="hstat-num" data-count="0">0</span><span class="hstat-lbl">PLAYERS</span></div>
+        <div class="hstat-divider"></div>
+        <div class="hstat"><span class="hstat-num" data-count="0">0</span><span class="hstat-lbl">HIGH SCORES</span></div>
+      </div>
+
+    </div>
+
+    <div class="scroll-hint">
+      <span>SCROLL</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       GAMES GRID
+  ═══════════════════════════════════ -->
+  <section class="games-section" id="games">
+    <div class="section-wrap">
+
+      <div class="section-head">
+        <span class="section-tag">// 01</span>
+        <h2 class="section-title">CHOOSE YOUR GAME</h2>
+        <p class="section-sub">Each game is its own world. Master them all.</p>
+      </div>
+
+      <div class="games-grid">
+
+        <!-- GAME CARD 1 -->
+        <div class="game-card" data-color="#00f5ff">
+          <div class="card-corner tl"></div>
+          <div class="card-corner tr"></div>
+          <div class="card-glow"></div>
+          <div class="card-badge">EASY</div>
+          <div class="card-icon">🐍</div>
+          <h3 class="card-title">SNAKE</h3>
+          <p class="card-desc">The classic — grow your snake, dodge the walls, don't eat yourself.</p>
+          <div class="card-meta">
+            <span class="meta-tag">ARCADE</span>
+            <span class="meta-tag">1 PLAYER</span>
+          </div>
+          <a href="games/snake.html" class="card-btn">LAUNCH <span>→</span></a>
+        </div>
+
+        <!-- GAME CARD 2 -->
+        <div class="game-card" data-color="#9d00ff">
+          <div class="card-corner tl"></div>
+          <div class="card-corner tr"></div>
+          <div class="card-glow"></div>
+          <div class="card-badge">MEDIUM</div>
+          <div class="card-icon">🧱</div>
+          <h3 class="card-title">BREAKOUT</h3>
+          <p class="card-desc">Smash all the bricks with a ball and paddle. Don't let it fall.</p>
+          <div class="card-meta">
+            <span class="meta-tag">ARCADE</span>
+            <span class="meta-tag">1 PLAYER</span>
+          </div>
+          <a href="games/breakout.html" class="card-btn">LAUNCH <span>→</span></a>
+        </div>
+
+        <!-- GAME CARD 3 -->
+        <div class="game-card" data-color="#ff0080">
+          <div class="card-corner tl"></div>
+          <div class="card-corner tr"></div>
+          <div class="card-glow"></div>
+          <div class="card-badge">EASY</div>
+          <div class="card-icon">✕</div>
+          <h3 class="card-title">TIC TAC TOE</h3>
+          <p class="card-desc">3 in a row wins. Play vs a friend or challenge the AI.</p>
+          <div class="card-meta">
+            <span class="meta-tag">STRATEGY</span>
+            <span class="meta-tag">2 PLAYER</span>
+          </div>
+          <a href="games/tictactoe.html" class="card-btn">LAUNCH <span>→</span></a>
+        </div>
+
+        <!-- GAME CARD 4 -->
+        <div class="game-card" data-color="#00ff88">
+          <div class="card-corner tl"></div>
+          <div class="card-corner tr"></div>
+          <div class="card-glow"></div>
+          <div class="card-badge">MEDIUM</div>
+          <div class="card-icon">💣</div>
+          <h3 class="card-title">MINESWEEPER</h3>
+          <p class="card-desc">Find all the mines without detonating a single one. Think fast.</p>
+          <div class="card-meta">
+            <span class="meta-tag">PUZZLE</span>
+            <span class="meta-tag">1 PLAYER</span>
+          </div>
+          <a href="games/minesweeper.html" class="card-btn">LAUNCH <span>→</span></a>
+        </div>
+
+        <!-- GAME CARD 5 -->
+        <div class="game-card" data-color="#ff9500">
+          <div class="card-corner tl"></div>
+          <div class="card-corner tr"></div>
+          <div class="card-glow"></div>
+          <div class="card-badge">HARD</div>
+          <div class="card-icon">⬛</div>
+          <h3 class="card-title">2048</h3>
+          <p class="card-desc">Slide tiles and combine numbers. Can you hit 2048?</p>
+          <div class="card-meta">
+            <span class="meta-tag">PUZZLE</span>
+            <span class="meta-tag">1 PLAYER</span>
+          </div>
+          <a href="games/2048.html" class="card-btn">LAUNCH <span>→</span></a>
+        </div>
+
+        <!-- COMING SOON CARD -->
+        <div class="game-card coming-soon" data-color="#5a6a8a">
+          <div class="card-corner tl"></div>
+          <div class="card-corner tr"></div>
+          <div class="card-icon">🚀</div>
+          <h3 class="card-title">MORE INCOMING</h3>
+          <p class="card-desc">New games are being built. Check back soon — the grid expands.</p>
+          <div class="card-meta">
+            <span class="meta-tag">COMING SOON</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       ABOUT
+  ═══════════════════════════════════ -->
+  <section class="about-section" id="about">
+    <div class="section-wrap">
+      <div class="about-grid">
+        <div class="about-text">
+          <span class="section-tag">// 02</span>
+          <h2 class="section-title">WHAT IS NEXUS?</h2>
+          <p>NEXUS GAMES is a browser-based arcade — a collection of mini-games you can play straight from Chrome, no downloads needed.</p>
+          <p>Built from scratch using <span class="highlight">HTML, CSS, and JavaScript</span>. Every game runs in your browser, on any device, instantly.</p>
+          <p>This is just <span class="highlight">v1.0 — Day 1</span>. New games, features, and leaderboards are loading in.</p>
+        </div>
+        <div class="about-specs">
+          <div class="spec-card">
+            <div class="spec-icon">⚡</div>
+            <div>
+              <div class="spec-title">INSTANT PLAY</div>
+              <div class="spec-desc">No downloads. Click and play immediately.</div>
+            </div>
+          </div>
+          <div class="spec-card">
+            <div class="spec-icon">📱</div>
+            <div>
+              <div class="spec-title">ANY DEVICE</div>
+              <div class="spec-desc">Works on desktop, tablet, and mobile.</div>
+            </div>
+          </div>
+          <div class="spec-card">
+            <div class="spec-icon">🏆</div>
+            <div>
+              <div class="spec-title">LEADERBOARDS</div>
+              <div class="spec-desc">High scores and rankings — coming soon.</div>
+            </div>
+          </div>
+          <div class="spec-card">
+            <div class="spec-icon">🛠️</div>
+            <div>
+              <div class="spec-title">OPEN SOURCE</div>
+              <div class="spec-desc">Built in the open. Improving every day.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       LEADERBOARD PLACEHOLDER
+  ═══════════════════════════════════ -->
+  <section class="leaderboard-section" id="leaderboard">
+    <div class="section-wrap">
+      <div class="section-head">
+        <span class="section-tag">// 03</span>
+        <h2 class="section-title">LEADERBOARD</h2>
+        <p class="section-sub">Top players across all games.</p>
+      </div>
+      <div class="lb-placeholder">
+        <div class="lb-icon">🏆</div>
+        <div class="lb-msg">NO SCORES YET</div>
+        <div class="lb-sub">Play a game to claim the top spot. Be the first.</div>
+        <a href="#games" class="btn btn-primary" style="margin-top:24px;">▶ PLAY NOW</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="logo-bracket">[</span>
+        <span class="logo-text">NEXUS</span>
+        <span class="logo-accent">GAMES</span>
+        <span class="logo-bracket">]</span>
+      </div>
+      <div class="footer-mid">
+        <!-- ✏️ EDIT: put your name here -->
+        <span>Built by <span class="highlight">Pranav</span> · GRIET, Hyderabad</span>
+      </div>
+      <div class="footer-right">
+        <span id="footerYear"></span> · v1.0.0
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
